@@ -26,9 +26,9 @@ everyone, e.g. in an internet cafe.
 
 %description -l pl
 Pessulus jest napisanym w pythonie edytorem blokad dla GNOME.
-UmoÅ¼liwia administratorowi wprowadzenie obowiÄ…zkowych ustawieÅ„ w GConf, 
-ktÃ³re nie bÄ™dÄ… mogÅ‚y byÄ‡ zmienione przez uÅ¼ytkownika.
-UÅ¼ycie pessulusa moÅ¼e byÄ‡ przydatne na ogÃ³lnodostÄ™pnych komputerach, np. 
+Umo¿liwia administratorowi wprowadzenie obowi±zkowych ustawieñ w GConf, 
+które nie bêd± mog³y byæ zmienione przez u¿ytkownika.
+U¿ycie pessulusa mo¿e byæ przydatne na ogólnodostêpnych komputerach, np. 
 w kawiarenkach internetowych.
 
 %prep
