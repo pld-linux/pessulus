@@ -18,18 +18,17 @@ Requires:	python-gnome >= 2.15.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Pessulus is a lockdown editor for GNOME, written in python.
-Pessulus enables administrators to set mandatory settings in GConf. The
-users can not change these settings.
-Use of pessulus can be useful on computers that are open to use by
-everyone, e.g. in an internet cafe.
+Pessulus is a lockdown editor for GNOME, written in Python. Pessulus
+enables administrators to set mandatory settings in GConf. The users
+can not change these settings. Use of pessulus can be useful on
+computers that are open to use by everyone, e.g. in an internet cafe.
 
 %description -l pl
 Pessulus jest napisanym w pythonie edytorem blokad dla GNOME.
-Umo¿liwia administratorowi wprowadzenie obowi±zkowych ustawieñ w GConf, 
-które nie bêd± mog³y byæ zmienione przez u¿ytkownika.
-U¿ycie pessulusa mo¿e byæ przydatne na ogólnodostêpnych komputerach, np. 
-w kawiarenkach internetowych.
+Umo¿liwia administratorowi wprowadzenie obowi±zkowych ustawieñ w
+GConfie, które nie bêd± mog³y byæ zmienione przez u¿ytkownika. U¿ycie
+pessulusa mo¿e byæ przydatne na ogólnodostêpnych komputerach, np. w
+kawiarenkach internetowych.
 
 %prep
 %setup -q
