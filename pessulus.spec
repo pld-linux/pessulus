@@ -1,12 +1,12 @@
 Summary:	Lockdown editor for GNOME
 Summary(pl):	Edytor blokad dla GNOME
 Name:		pessulus
-Version:	2.16.0
+Version:	2.16.1
 Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pessulus/2.16/%{name}-%{version}.tar.gz
-# Source0-md5:	ef32fca96b992bc5ea4f45407f3732cc
+# Source0-md5:	06ac5855204f159016de9792b98c9292
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/~vuntz/pessulus/
 BuildRequires:	GConf2-devel >= 2.14.0
