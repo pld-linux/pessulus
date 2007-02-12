@@ -1,5 +1,5 @@
 Summary:	Lockdown editor for GNOME
-Summary(pl.UTF-8):   Edytor blokad dla GNOME
+Summary(pl.UTF-8):	Edytor blokad dla GNOME
 Name:		pessulus
 Version:	2.16.2
 Release:	1
