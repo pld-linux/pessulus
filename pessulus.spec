@@ -1,5 +1,5 @@
 Summary:	Lockdown editor for GNOME
-Summary(pl):	Edytor blokad dla GNOME
+Summary(pl.UTF-8):   Edytor blokad dla GNOME
 Name:		pessulus
 Version:	2.16.2
 Release:	1
@@ -23,11 +23,11 @@ enables administrators to set mandatory settings in GConf. The users
 can not change these settings. Use of pessulus can be useful on
 computers that are open to use by everyone, e.g. in an internet cafe.
 
-%description -l pl
+%description -l pl.UTF-8
 Pessulus jest napisanym w pythonie edytorem blokad dla GNOME.
-Umo¿liwia administratorowi wprowadzenie obowi±zkowych ustawieñ w
-GConfie, które nie bêd± mog³y byæ zmienione przez u¿ytkownika. U¿ycie
-pessulusa mo¿e byæ przydatne na ogólnodostêpnych komputerach, np. w
+UmoÅ¼liwia administratorowi wprowadzenie obowiÄ…zkowych ustawieÅ„ w
+GConfie, ktÃ³re nie bÄ™dÄ… mogÅ‚y byÄ‡ zmienione przez uÅ¼ytkownika. UÅ¼ycie
+pessulusa moÅ¼e byÄ‡ przydatne na ogÃ³lnodostÄ™pnych komputerach, np. w
 kawiarenkach internetowych.
 
 %prep
