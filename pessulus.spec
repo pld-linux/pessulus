@@ -2,7 +2,7 @@ Summary:	Lockdown editor for GNOME
 Summary(pl.UTF-8):	Edytor blokad dla GNOME
 Name:		pessulus
 Version:	2.16.3
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pessulus/2.16/%{name}-%{version}.tar.bz2
@@ -14,6 +14,8 @@ BuildRequires:	intltool >= 0.35.0
 BuildRequires:	python-gnome-devel >= 2.16.2
 %pyrequires_eq	python-modules
 Requires:	python-gnome >= 2.16.2
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,6 +33,9 @@ kawiarenkach internetowych.
 
 %prep
 %setup -q
+
+sed -i -e s#sr\@Latn#sr\@latin# po/LINGUAS
+mv -f po/sr\@{Latn,latin}.po
 
 %build
 cp -f /usr/share/automake/config.sub .
