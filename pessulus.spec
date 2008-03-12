@@ -1,19 +1,23 @@
 Summary:	Lockdown editor for GNOME
 Summary(pl.UTF-8):	Edytor blokad dla GNOME
 Name:		pessulus
-Version:	2.16.3
-Release:	2
+Version:	2.16.4
+Release:	1
 License:	GPL v2
-Group:		Applications
+Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pessulus/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	cc6fc71e8e79a2d6ec778b10f1ca730d
+# Source0-md5:	b423065aeddb6ed416e6eafa36a4aab9
 URL:		http://www.gnome.org/~vuntz/pessulus/
-BuildRequires:	GConf2-devel >= 2.16.0
-BuildRequires:	automake
-BuildRequires:	intltool >= 0.35.0
-BuildRequires:	python-gnome-devel >= 2.16.2
+BuildRequires:	GConf2-devel >= 2.22.0
+BuildRequires:	autoconf >= 2.53
+BuildRequires:	automake >= 1:1.7
+BuildRequires:	gettext-devel
+BuildRequires:	intltool >= 0.36.2
+BuildRequires:	pkgconfig
+BuildRequires:	python-gnome-devel >= 2.22.0
+BuildRequires:	python-pygtk >= 2:2.12.0
 %pyrequires_eq	python-modules
-Requires:	python-gnome >= 2.16.2
+Requires:	python-gnome >= 2.22.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,11 +38,14 @@ kawiarenkach internetowych.
 %prep
 %setup -q
 
-sed -i -e s#sr\@Latn#sr\@latin# po/LINGUAS
-mv -f po/sr\@{Latn,latin}.po
+sed -i -e 's#sr@Latn#sr@latin#' po/LINGUAS
+mv -f po/sr@{Latn,latin}.po
 
 %build
-cp -f /usr/share/automake/config.sub .
+%{__intltoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
