@@ -1,23 +1,27 @@
 Summary:	Lockdown editor for GNOME
 Summary(pl.UTF-8):	Edytor blokad dla GNOME
 Name:		pessulus
-Version:	2.16.4
-Release:	2
+Version:	2.24.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pessulus/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	b423065aeddb6ed416e6eafa36a4aab9
-URL:		http://www.gnome.org/~vuntz/pessulus/
-BuildRequires:	GConf2-devel >= 2.22.0
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/pessulus/2.24/%{name}-%{version}.tar.bz2
+# Source0-md5:	5cbdb0f6e97444a2ddb93f40ad10df90
+URL:		http://live.gnome.org/Pessulus
+BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	gettext-devel
-BuildRequires:	intltool >= 0.36.2
+BuildRequires:	intltool >= 0.40.0
 BuildRequires:	pkgconfig
+BuildRequires:	python-gnome-desktop-devel >= 2.24.0
 BuildRequires:	python-gnome-devel >= 2.22.0
-BuildRequires:	python-pygtk >= 2:2.12.0
+BuildRequires:	python-pygtk-devel >= 2:2.12.0
 %pyrequires_eq	python-modules
-Requires:	python-gnome >= 2.22.0
+BuildRequires:	rpmbuild(macros) >= 1.311
+Requires(post,postun):	gtk+2
+Requires:	python-gnome-desktop >= 2.24.0
+Requires:	python-gnome-gconf >= 2.22.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -38,9 +42,6 @@ kawiarenkach internetowych.
 %prep
 %setup -q
 
-sed -i -e 's#sr@Latn#sr@latin#' po/LINGUAS
-mv -f po/sr@{Latn,latin}.po
-
 %build
 %{__intltoolize}
 %{__aclocal}
@@ -55,18 +56,28 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/Pessulus/*.py
+# not supported
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/bal
+
+%py_postclean
 
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_icon_cache hicolor
+
+%postun
+%update_icon_cache hicolor
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%dir %{py_sitedir}/Pessulus
-%{py_sitedir}/Pessulus/*.py[co]
+%attr(755,root,root) %{_bindir}/pessulus
+%dir %{py_sitescriptdir}/Pessulus
+%{py_sitescriptdir}/Pessulus/*.py[co]
+%{_iconsdir}/hicolor/*/*/*
 %{_datadir}/pessulus
 %{_desktopdir}/*.desktop
