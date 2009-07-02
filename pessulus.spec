@@ -1,12 +1,12 @@
 Summary:	Lockdown editor for GNOME
 Summary(pl.UTF-8):	Edytor blokad dla GNOME
 Name:		pessulus
-Version:	2.26.1
+Version:	2.26.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pessulus/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	526e18ccf9fbf19e255910e7710f69b9
+# Source0-md5:	255ec0743714b6fc50da796f6bc95009
 URL:		http://live.gnome.org/Pessulus
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.53
@@ -57,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # not supported
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/bal
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{bal,ca@valencia}
 
 %py_postclean
 
