@@ -17,11 +17,12 @@ BuildRequires:	pkgconfig
 BuildRequires:	python-gnome-desktop-devel >= 2.24.0
 BuildRequires:	python-gnome-devel >= 2.22.0
 BuildRequires:	python-pygtk-devel >= 2:2.12.0
-%pyrequires_eq	python-modules
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.311
 Requires(post,postun):	gtk+2
 Requires:	python-gnome-desktop >= 2.24.0
 Requires:	python-gnome-gconf >= 2.22.0
+%pyrequires_eq	python-modules
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
