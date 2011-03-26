@@ -59,8 +59,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-# not supported
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{bal,en@shaw}
+# not supported by glibc (as of 2.13-3)
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/bal
 
 %py_postclean
 
