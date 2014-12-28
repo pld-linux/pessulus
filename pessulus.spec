@@ -11,7 +11,7 @@ URL:		http://live.gnome.org/Pessulus
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-gnome-desktop-devel >= 2.24.0
